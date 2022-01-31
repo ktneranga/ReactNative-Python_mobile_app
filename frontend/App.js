@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Create from './components/Create';
 import Constants from 'expo-constants';
 import Details from './components/Details';
+import Edit from './components/Edit';
 
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native'; 
@@ -26,6 +27,12 @@ function App() {
           name = "Details"
           component = {Details}
         />
+        <Stack.Screen
+          name="Edit"
+          component={Edit}
+        >
+
+        </Stack.Screen>
       </Stack.Navigator>
     </View>
   );

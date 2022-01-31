@@ -4,6 +4,20 @@ import {Button} from 'react-native-paper';
 
 const Details = (props) => {
     const data = props.route.params.data;
+
+    const deleteItem = (id) => {
+        fetch(`http://192.168.8.170:3000/delete/${id}`,{
+            method: 'DELETE',
+            headers: {
+                'Content-Type' : 'application/json'
+            }
+        })
+        .then(data=>{
+            props.navigation.navigate('Home')
+        })
+        .catch(err=>console.log(err))
+    }
+
     return(
         <ScrollView>
             <View style={styles.screen}>
@@ -15,7 +29,7 @@ const Details = (props) => {
                         style={styles.button}
                         icon="pencil"
                         mode='contained'
-                        onPress={()=>{console.log('pressed')}}
+                        onPress={()=>{props.navigation.navigate('Edit', {data:data})}}
                     >
                         Edit
                     </Button>
@@ -23,7 +37,7 @@ const Details = (props) => {
                         style={styles.button}
                         icon="delete"
                         mode='contained'
-                        onPress={()=>{console.log('pressed')}}
+                        onPress={()=>{deleteItem(data.id)}}
                     >
                         Delete
                     </Button>
