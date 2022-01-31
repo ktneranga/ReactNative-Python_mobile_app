@@ -21,7 +21,7 @@ const Create = (props) => {
         })
         .then(resp => resp.json())
         .then(data=>{
-            props.navigation.navigate('Home')
+            props.navigation.goBack('Home')
         })
         .catch(error => console.log(error))
     }

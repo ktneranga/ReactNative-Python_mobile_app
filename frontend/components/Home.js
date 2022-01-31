@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from "react";
 import {Text, View, StyleSheet, FlatList} from 'react-native';
-import {Card, FAB} from 'react-native-paper'
+import {Card, FAB} from 'react-native-paper';
 // test test test
 
 const Home = (props) => {
@@ -24,9 +24,14 @@ const Home = (props) => {
         loadData()
     },[]); //empty array dependency , fetch data once
 
+
+    const clickedItem = (data) => {
+        props.navigation.navigate('Details', {data:data});
+    }
+
     const renderData = (item) => {
         return(
-            <Card style={styles.card}>
+            <Card style={styles.card} onPress={()=>{clickedItem(item)}} >
                 <Text style={styles.title}>{item.title}</Text>
                 <Text style={styles.bodyText}>{item.body}</Text>
             </Card>

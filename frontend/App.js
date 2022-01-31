@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Home from './components/Home';
 import Create from './components/Create';
 import Constants from 'expo-constants';
+import Details from './components/Details';
 
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native'; 
@@ -20,6 +21,10 @@ function App() {
         <Stack.Screen 
           name = "Create"
           component = {Create}
+        />
+        <Stack.Screen 
+          name = "Details"
+          component = {Details}
         />
       </Stack.Navigator>
     </View>
