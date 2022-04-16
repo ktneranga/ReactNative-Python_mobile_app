@@ -5,6 +5,7 @@ import Create from './components/Create';
 import Constants from 'expo-constants';
 import Details from './components/Details';
 import Edit from './components/Edit';
+import Login from './components/Login'
 
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native'; 
@@ -15,6 +16,10 @@ function App() {
   return (
     <View style={styles.container}>
       <Stack.Navigator>
+        <Stack.Screen
+          name='Login'
+          component={Login}
+        />
         <Stack.Screen 
           name = "Home"
           component = {Home}
