@@ -4,7 +4,7 @@
 # install flask marshmallow => pip install flask-marshmallow
 # since we are sqlalchemy => install marshmallow-sqlalchemy => pip install marshmallow-sqlalchemy
 
-# ==============================================================
+# ====================================================================================
 from flask import Flask, jsonify, request
 #creating the tables using sqlalchemy
 from flask_sqlalchemy import SQLAlchemy
