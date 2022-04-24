@@ -2,8 +2,12 @@ import { useLinkProps } from '@react-navigation/native';
 import React, {useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {TextInput, Button} from 'react-native-paper';
+import { useSelector } from 'react-redux';
 
 const Create = (props) => {
+
+    const loggedUser = useSelector(state=>state.users.loggedInUser);
+
 
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
@@ -28,6 +32,7 @@ const Create = (props) => {
 
     return(
         <View style={styles.screen}>
+            <Text>{loggedUser.name}</Text>
             <TextInput
                 style={styles.input}
                 label="Title"
