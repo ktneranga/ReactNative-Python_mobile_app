@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from "react";
 import {Text, View, StyleSheet, FlatList} from 'react-native';
 import {Card, FAB} from 'react-native-paper';
+import endpoint from "../constant/endpoint";
 // test test test
 
 const Home = (props) => {
@@ -9,7 +10,7 @@ const Home = (props) => {
     const [loading, setIsLoading] = useState(true);
 
     const loadData = () => {
-        fetch('http://192.168.8.170:3000/',{
+        fetch(endpoint,{
             method: 'GET'
         })
         .then(resp => resp.json())
