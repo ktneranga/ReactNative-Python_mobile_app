@@ -22,7 +22,7 @@ const Login = (props) => {
                 name: loggedInUser.name,
                 id: loggedInUser.uid
             }));
-            props.navigation.navigate('Create');
+            props.navigation.navigate('Home');
         }else{
             console.log('Invalid user credentials...');
         }
